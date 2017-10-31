@@ -26,3 +26,6 @@ configuration option is set to "All Users", with type "complex". Example value f
 
 6. You can specify which bug fields appear in the Matter notifications. Edit the *plugin_Matter_columns* configuration 
 option for this purpose.  Follow the instructions on the plugin configuration page.
+
+
+_Heavily inspired by [MantisBT-Slack](https://github.com/infojunkie/MantisBT-Slack) Plugin._

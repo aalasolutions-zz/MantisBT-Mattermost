@@ -19,8 +19,8 @@ configuration option is set to "All Users", with type "complex". Example value f
 
 
           array (
-              'Mantis Project Name as Appear With Spaces' => 'general',
-              'My Other Short Named Mantis Project' => 'second-project'
+              'Mantis Project Name as Appear With Spaces' => 'channel-name',
+              'My Other Short Named Mantis Project' => 'without-number-sign'
           )
 
 

@@ -17,9 +17,10 @@ Mantis.
 5. Follow the instructions on the plugin's configuration page to get there. Make sure the *plugin_Matter_channels* 
 configuration option is set to "All Users", with type "complex". Example value for this setting:
 
+
       array (
-          'My First Mantis Project' => 'general',
-          'My Second Mantis Project' => 'second-project'
+          'Mantis Project Name as Appear With Spaces' => 'general',
+          'My Other Short Named Mantis Project' => 'second-project'
       )
 
 6. You can specify which bug fields appear in the Matter notifications. Edit the *plugin_Matter_columns* configuration 

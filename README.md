@@ -18,10 +18,11 @@ Mantis.
 configuration option is set to "All Users", with type "complex". Example value for this setting:
 
 
-      array (
-          'Mantis Project Name as Appear With Spaces' => 'general',
-          'My Other Short Named Mantis Project' => 'second-project'
-      )
+          array (
+              'Mantis Project Name as Appear With Spaces' => 'general',
+              'My Other Short Named Mantis Project' => 'second-project'
+          )
+
 
 6. You can specify which bug fields appear in the Matter notifications. Edit the *plugin_Matter_columns* configuration 
 option for this purpose.  Follow the instructions on the plugin configuration page.

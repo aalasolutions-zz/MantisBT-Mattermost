@@ -1,0 +1,48 @@
+<?php
+/**
+ * Mattermost Integration
+ * Copyright (C) AA'LA Solutions (info@aalasolutions.com)
+ *
+ * Mattermost Integration is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 2
+ * as published by the Free Software Foundation.
+ *
+ * Mattermost Integration is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Mattermost Integration; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+ * or see http://www.gnu.org/licenses/.
+ */
+
+$s_plugin_Mattermost_                 = '';
+$s_plugin_Mattermost_title            = 'Mattermost Integration';
+$s_plugin_Mattermost_description      = 'Adds Mattermost integration to Mantis.';
+$s_plugin_Mattermost_config           = 'Configuration';
+$s_plugin_Mattermost_url_webhook      = 'Default Mattermost Webhook URL';
+$s_plugin_Mattermost_url_webhooks     = 'Additional Mattermost Webhook URLs';
+$s_plugin_Mattermost_bot_name         = 'Mattermost Bot Name';
+$s_plugin_Mattermost_bot_icon         = 'Mattermost Bot Icon';
+$s_plugin_Mattermost_skip_bulk        = 'Skip notification on bulk actions';
+$s_plugin_Mattermost_link_names       = 'Turn user names into Mattermost links (may cause excess Mattermost notifications)';
+$s_plugin_Mattermost_default_channel  = 'Default Mattermost Channel';
+$s_plugin_Mattermost_channels         = 'Mattermost Channels';
+$s_plugin_Mattermost_usernames        = 'Mattermost Usernames';
+$s_plugin_Mattermost_columns          = 'Mattermost Columns';
+$s_plugin_Mattermost_bug_created      = '[%s] %s created <%s|%s>.';
+$s_plugin_Mattermost_bug_updated      = '[%s] %s updated <%s|%s>.';
+$s_plugin_Mattermost_bug_deleted      = '[%s] %s deleted %s.';
+$s_plugin_Mattermost_bugnote_created  = "[%s] %s commented on <%s|%s> saying:";
+$s_plugin_Mattermost_bugnote_updated  = "[%s] %s edited a comment on <%s|%s> saying:";
+$s_plugin_Mattermost_bugnote_deleted  = "[%s] %s deleted a comment on <%s|%s>.";
+$s_plugin_Mattermost_no_user          = '(no one)';
+$s_plugin_Mattermost_unknown_field    = '(don\'t know how to render field "%s")';
+$s_plugin_Mattermost_skip             = 'Skip Mattermost notification';
+$s_plugin_Mattermost_action_update    = 'Update';
+
+$MANTIS_ERROR['plugin_Mattermost_ERROR_NO_CURL']     = 'The Mattermost plugin requires the cURL PHP extension (http://php.net/curl)';
+$MANTIS_ERROR['plugin_Mattermost_ERROR_PHP_VERSION'] = 'The Mattermost plugin requires PHP 5.3.0 or higher';
+$MANTIS_ERROR['plugin_Mattermost_ERROR_CURL']        = 'The request to Mattermost didn\'t go through.  Check your webhook URL.  Also make sure there are no unusual characters in your bot name or bot icon settings.  Further details may be printed below this box.';

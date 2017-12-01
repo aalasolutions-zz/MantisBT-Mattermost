@@ -332,20 +332,18 @@ class MattermostPlugin extends MantisPlugin
             return;
         }
 
-        $ch = curl_init();
-
-
+        $msg = urlencode(htmlentities($msg, ENT_QUOTES));
         $url = sprintf('%s', trim($webhook));
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $payload  = array(
+
+        $payload = array(
             'channel' => $channel,
             'username' => plugin_config_get('bot_name'),
-            'text' => $msg,
+            'text' => '"' . $msg . '"',
             'link_names' => plugin_config_get('link_names'),
         );
+
         $bot_icon = trim(plugin_config_get('bot_icon'));
+
         if (empty($bot_icon)) {
             $payload['icon_url'] = 'https://github.com/aalasolutions/MantisBT-Mattermost/blob/master/mantis_logo.png?raw=true';
         } elseif (preg_match('/^:[a-z0-9_\-]+:$/i', $bot_icon)) {
@@ -353,10 +351,18 @@ class MattermostPlugin extends MantisPlugin
         } elseif ($bot_icon) {
             $payload['icon_url'] = trim($bot_icon);
         }
+
         if ($attachment) {
             $payload['attachments'] = array($attachment);
         }
-        $data = 'payload=' . json_encode($payload);
+
+        $data = json_encode($payload);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
         curl_setopt($ch, CURLOPT_TIMEOUT, 5);

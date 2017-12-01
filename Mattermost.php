@@ -332,13 +332,12 @@ class MattermostPlugin extends MantisPlugin
             return;
         }
 
-        $msg = urlencode(htmlentities($msg, ENT_QUOTES));
         $url = sprintf('%s', trim($webhook));
 
         $payload = array(
             'channel' => $channel,
             'username' => plugin_config_get('bot_name'),
-            'text' => '"' . $msg . '"',
+            'text' =>  $msg,
             'link_names' => plugin_config_get('link_names'),
         );
 
